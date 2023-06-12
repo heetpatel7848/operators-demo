@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
-import { Observable, of, from, concatWith, merge, interval, map } from 'rxjs';
+import { Observable, of, from, concatWith, merge, interval, map, concatMap, toArray } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -39,4 +39,22 @@ export class OperatorService {
     let mapped$ = number$.pipe(map((h) => h * 10));
     return mapped$;
   }
+
+  concatMap(): Observable<string[]> {
+    const srcObservable$ = of(1, 2, 3, 4, 5);
+    const inrObservable$ = of('A', 'B', 'C', 'D');
+
+    return srcObservable$.pipe(
+      concatMap((value) => {
+        console.log("source value ", value);
+        console.log("inner observable ");
+        return inrObservable$.pipe(
+          map((innerValue) => `${value}${innerValue}`)
+        );
+      }),
+      toArray()
+    );
+  }
+
+
 }
