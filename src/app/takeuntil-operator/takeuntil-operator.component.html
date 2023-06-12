@@ -1,1 +1,13 @@
-<p>takeuntil-operator works!</p>
+<br />
+<br />
+
+<div class="col-sm-offset-2 col-sm-10">
+  <button type="button" class="of-button" (click)="takeuntil()">
+    Click it to view Take Until Operator
+  </button>
+  <div class="list-of-operator" *ngIf="results.length > 0">
+    <p class="result-of-operator" *ngFor="let result of results">
+      {{ result }}
+    </p>
+  </div>
+</div>

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
-import { Observable, of, from, concatWith, merge, interval, map, concatMap, toArray } from 'rxjs';
+import { Observable, of, from, concatWith, merge, interval, map, concatMap, toArray, mergeMap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -56,5 +56,9 @@ export class OperatorService {
     );
   }
 
+  takeUntil(): Observable<number> {
+    const source1$ = interval(1000);
+    return source1$;
+  }
 
 }
