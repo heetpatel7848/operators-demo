@@ -15,6 +15,7 @@ import { SwitchmapOperatorComponent } from './switchmap-operator/switchmap-opera
 import { TakeuntilOperatorComponent } from './takeuntil-operator/takeuntil-operator.component';
 import { FromOperatorComponent } from './from-operator/from-operator.component';
 import { MergeOperatorComponent } from './merge-operator/merge-operator.component';
+import { AlertComponent } from './alert/alert.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { MergeOperatorComponent } from './merge-operator/merge-operator.componen
     TakeuntilOperatorComponent,
     FromOperatorComponent,
     MergeOperatorComponent,
+    AlertComponent,
   ],
   imports: [
     BrowserModule,
