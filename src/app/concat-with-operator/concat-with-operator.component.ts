@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ViewContainerRef } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { OperatorService } from '../service/operator.service';
+import { AlertComponent } from '../alert/alert.component';
 
 @Component({
   selector: 'app-concat-with-operator',
@@ -9,7 +10,9 @@ import { OperatorService } from '../service/operator.service';
 })
 export class ConcatWithOperatorComponent {
 
-  constructor(private operatorService: OperatorService) { }
+  constructor(private operatorService: OperatorService, private viewRef: ViewContainerRef) { }
+
+  @ViewChild('dynamic', { read: ViewContainerRef })
 
   subscription: Subscription[] = [];
   results: number[] = [];
@@ -21,5 +24,14 @@ export class ConcatWithOperatorComponent {
       console.log(res);
 
     }))
+  }
+
+  showDynamicComponent() {
+    this.viewRef.clear();
+    this.viewRef.createComponent(AlertComponent);
+  }
+
+  removeDynamicComponent() {
+    this.viewRef.clear();
   }
 }
