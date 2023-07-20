@@ -1,0 +1,45 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "employees": [
+    {
+      "firstName": "YASH",
+      "lastName": "SABHAYA",
+      "email": "yash27@gmail.com",
+      "dob": "2001-08-26T18:30:00.000Z",
+      "gender": "male",
+      "education": "Graduate",
+      "company": "RE",
+      "experience": 1,
+      "package": 12,
+      "id": 2
+    },
+    {
+      "firstName": "HEET",
+      "lastName": "PATEL",
+      "email": "heet@gmail.com",
+      "dob": "2001-11-06T18:30:00.000Z",
+      "gender": "male",
+      "education": "Graduate",
+      "company": "TCS",
+      "experience": 1,
+      "package": 12,
+      "id": 3
+    }
+  ]
+}

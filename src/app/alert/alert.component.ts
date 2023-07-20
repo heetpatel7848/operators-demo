@@ -18,5 +18,4 @@ export class AlertComponent {
     alert('hello from the operator ');
   }
 
-
 }
